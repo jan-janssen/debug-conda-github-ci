@@ -7,7 +7,8 @@ if __name__ == "__main__":
     env_name = "py313"
     env_path = os.path.join(context.root_prefix, "..", env_name)
     output = check_output(
-        ["conda", "run", "-p", env_path, "which", "python"], 
+        ["conda", "run", "-p", env_path, "which", "python"],
+        env=os.environ,
         universal_newlines=True,
     )
     print(output)
